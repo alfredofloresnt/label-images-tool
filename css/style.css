@@ -1,0 +1,53 @@
+body{
+	background-color: #e1e2e1;
+}
+
+input[type="file"] {
+    display: none;
+}
+label{
+    padding: 10px;
+    background: #1976d2; 
+    display: table;
+    color: #fff;
+    border-radius: 5px;
+     }
+
+label:hover{
+	background: #63a4ff;
+	cursor: pointer;
+
+}
+
+.button-div button{
+	width: 100%;
+}
+
+.image-div{
+	display: inline-block;
+	margin: auto auto;
+	position: relative; 
+}
+
+.image-div img{
+	position: absolute;
+	z-index: -1;
+	vertical-align: baseline;
+	transform: translateX(-50%);
+}
+
+#my-canvas{
+	cursor: crosshair;
+    position:absolute;
+    z-index:20;
+    transform: translateX(-100%);
+}
+
+#fotos-list{
+	overflow-y: scroll;
+	height: 200px;
+}
+
+.lista{
+	cursor: pointer;
+}

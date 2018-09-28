@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/bundle/azure-storage.blob.js"></script>
+	<script type="text/javascript" src="scripts/bundle/azure-storage.file.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title></title>
+</head>
+<body>
+	<!--Header-->
+	<div class="col-xs-12" style="background-color: #1976d2; color: white; padding: 12px; text-align: center; ">
+	<h2>Label It</h2>
+	</div>
+
+
+	<!--File selector-->
+	<div style="">
+		<div id="choose-files" style="text-align: center; padding-top: 32px;">
+			<div style="width: 300px; margin: auto;"><p>Bienvenido! Label it es una herramienta para etiquetar imagenes y generar archivos xml subiendolos a la nube. Selecciona multiples archivos para empezar a etiquetar</p></div>
+			<input type="file" name="files"  id="files" onchange="setImages(this)" multiple="" class="inputfile">
+			<label for="files" style="margin: auto">Choose files</label>
+		</div>			
+	</div>
+
+	<!--Content-->
+	<div class="row" id="content">
+		<div class="col-md-3" style="background-color: white">
+			<!--Fotos List-->
+			<div>
+				<div>
+					<div><h3>Fotos</h3></div>
+				</div>
+				<div id="fotos-list" style="min-height: 200px;">
+				
+				</div>				
+			</div>
+			<!--Labels List-->
+			<div>
+				<div>
+					<div><h3>Labels</h3></div>
+				</div>
+				<div id="label-view" style="min-height: 200px;">
+
+				</div>
+				<div class="input-group mb-3" >
+					<input type="text" name="" id="label-text" class="form-control">
+					<div class="input-group-append">
+						<button class="btn btn-primary" onclick="addLabel()">Add</button>
+					</div>
+		
+				</div>					
+			</div>
+		</div>
+
+
+		<!--Image-->
+		<div class="col-md-6" style="text-align: center;">
+			<div id="image-div">
+				<img id="image-view" src="dataset/dataR/IMG_20180924_201830.jpg"  width: 200px;">
+				<canvas id="my-canvas" style="cursor: crosshair; border:1px solid #d3d3d3; position: absolute; transform: translateX(-50%);"></canvas>					
+			</div>
+			<div class="row button-div" style="margin-top: 16px;">
+				<div class="col-md-6" class="bottom: 0px">
+					<button class="btn btn-danger">Reset</button>
+				</div>
+				<div class="col-md-6">
+					<button class="btn btn-success" onclick="download()">Save</button>
+				</div>
+			</div>		
+		</div>
+		<!--Archivos Guardados-->
+		<div class="col-md-3" style="background-color: white">
+			<div>
+				<div>
+					<div><h3>Archivos Guardados</h3></div>
+				</div>
+				<div id="list-xml">
+					
+				</div>
+				<div style="padding-top: 16px;">	
+						<button class="btn btn-success" style="width: 100%; " onclick="downloadAll()">Download All</button>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	<div id="my_iframes" style="display:none;">
+	</div>
+</body>
+<script type="text/javascript" src="scripts/labelimage.js"></script>
+</html>
